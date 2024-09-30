@@ -1,5 +1,6 @@
 import useLocalStorage from './hooks/useLocalStorage';
 import TaskInput from './components/TaskInput';
+import TaskList from './components/TaskList';
 
 const App = () => {
   const [tasks, setTasks] = useLocalStorage('tasks', []);
@@ -12,13 +13,7 @@ const App = () => {
     <div>
       <h1>Time Block Task Manager</h1>
       <TaskInput addTask={addTask} />
-      <ul>
-        {tasks.map((task, index) => (
-          <li key={index}>
-            {task.name} - {task.time} minutes
-          </li>
-        ))}
-      </ul>
+      <TaskList tasks={tasks} />
     </div>
   );
 }
