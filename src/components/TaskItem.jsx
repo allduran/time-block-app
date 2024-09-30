@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useState, useEffect } from 'react';
 import Button from './Button';
 
-function TaskItem({ task, index, updateTask, deleteTask }) {
+function TaskItem({ task, index, updateTask, deleteTask, triggerNotification }) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTask, setEditedTask] = useState({ name: task.name, time: task.time });
 
@@ -17,12 +17,12 @@ function TaskItem({ task, index, updateTask, deleteTask }) {
         setRemainingTime((prev) => prev - 1);
       }, 1000);
     } else if (remainingTime === 0) {
-      alert(`Time's up for ${task.name}!`);
+      triggerNotification(`Time's up for ${task.name}!`);
       setIsActive(false);
     }
     
     return () => clearInterval(timer);
-  }, [isActive, remainingTime, task.name]);
+  }, [isActive, remainingTime, task.name, triggerNotification]);
 
   const handleEditToggle = () => {
     setIsEditing(!isEditing);
@@ -97,6 +97,7 @@ TaskItem.propTypes = {
   index: PropTypes.number.isRequired,
   updateTask: PropTypes.func.isRequired,
   deleteTask: PropTypes.func.isRequired,
+  triggerNotification: PropTypes.func.isRequired,
 };
 
 export default TaskItem;
