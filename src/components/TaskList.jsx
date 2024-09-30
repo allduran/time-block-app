@@ -1,17 +1,23 @@
+//TaskList.jsx
 import PropTypes from 'prop-types';
 import TaskItem from './TaskItem';
 
-const TaskList = ({ tasks }) => {
+function TaskList({ tasks, updateTask, deleteTask }) {
   return (
     <ul>
       {tasks.map((task, index) => (
-        <TaskItem key={index} task={task} index={index} />
+        <TaskItem
+          key={index}
+          task={task}
+          index={index}
+          updateTask={updateTask}
+          deleteTask={deleteTask} // This should pass the deleteTask function
+        />
       ))}
     </ul>
   );
 }
 
-// Define PropTypes for the component
 TaskList.propTypes = {
   tasks: PropTypes.arrayOf(
     PropTypes.shape({
@@ -20,6 +26,8 @@ TaskList.propTypes = {
       completed: PropTypes.bool,
     })
   ).isRequired,
+  updateTask: PropTypes.func.isRequired,
+  deleteTask: PropTypes.func.isRequired,
 };
 
 export default TaskList;
