@@ -33,7 +33,6 @@ const TaskInput = ({ addTask }) => {
   );
 }
 
-// Define PropTypes for the component
 TaskInput.propTypes = {
   addTask: PropTypes.func.isRequired,
 };

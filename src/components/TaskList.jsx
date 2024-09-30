@@ -11,7 +11,7 @@ function TaskList({ tasks, updateTask, deleteTask }) {
           task={task}
           index={index}
           updateTask={updateTask}
-          deleteTask={deleteTask} // This should pass the deleteTask function
+          deleteTask={deleteTask}
         />
       ))}
     </ul>
