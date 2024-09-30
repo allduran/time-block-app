@@ -1,10 +1,11 @@
 //TaskList.jsx
 import PropTypes from 'prop-types';
 import TaskItem from './TaskItem';
+import '../styles/TaskList.css';
 
 function TaskList({ tasks, updateTask, deleteTask, triggerNotification }) {
   return (
-    <ul>
+    <ul className='task-list'>
       {tasks.map((task, index) => (
         <TaskItem
           key={index}

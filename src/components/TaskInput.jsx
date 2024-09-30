@@ -1,6 +1,7 @@
 //TaskInput.jsx
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import '../styles/TaskInput.css';
 
 const TaskInput = ({ addTask }) => {
   const [task, setTask] = useState('');
@@ -16,7 +17,7 @@ const TaskInput = ({ addTask }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='task-input'>
       <input
         type="text"
         placeholder="Task Name"

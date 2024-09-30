@@ -1,0 +1,17 @@
+.task-input {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.task-input input {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  flex: 1;
+}
+
+.task-input button {
+  margin-left: 0.5rem;
+}

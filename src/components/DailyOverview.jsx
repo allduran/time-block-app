@@ -1,5 +1,6 @@
 // DailyOverview.jsx
 import PropTypes from 'prop-types';
+import '../styles/DailyOverview.css';
 
 const DailyOverview = ({ tasks }) => {
   const totalTasks = tasks.length;
@@ -8,7 +9,7 @@ const DailyOverview = ({ tasks }) => {
   const timeRemaining = totalTime - (completedTasks * Math.max(...tasks.map(task => task.time)));
 
   return (
-    <div>
+    <div className="daily-overview">
       <h2>Daily Overview</h2>
       <p>Total Tasks: {totalTasks}</p>
       <p>Completed Tasks: {completedTasks}</p>

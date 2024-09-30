@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import '../styles/Button.css';
 
 function Button({ children, onClick, type = 'primary', disabled = false }) {
   const className = type === 'primary' ? 'btn-primary' : 'btn-secondary';
