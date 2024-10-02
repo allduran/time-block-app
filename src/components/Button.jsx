@@ -2,10 +2,8 @@ import PropTypes from 'prop-types';
 import '../styles/Button.css';
 
 function Button({ children, onClick, type = 'primary', disabled = false }) {
-  const className = type === 'primary' ? 'btn-primary' : 'btn-secondary';
-
   return (
-    <button className={className} onClick={onClick} disabled={disabled}>
+    <button className={`button ${type}`} onClick={onClick} disabled={disabled}>
       {children}
     </button>
   );

@@ -1,28 +1,33 @@
-.btn-primary {
-    background-color: var(--primary-color);
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-primary:hover {
-    background-color: #ff6a78;
-  }
-  
-  .btn-secondary {
-    background-color: var(--secondary-color);
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #f1a7a7;
-  }
-  
+/* Button.css */
+.button {
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button.primary {
+  background-color: #79a3b1;
+  color: white;
+}
+
+.button.primary:hover {
+  background-color: #558b96;
+}
+
+.button.secondary {
+  background-color: #fff;
+  color: #79a3b1;
+  border: 1px solid #79a3b1;
+}
+
+.button.secondary:hover {
+  background-color: #f0f0f0;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

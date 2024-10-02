@@ -1,0 +1,45 @@
+/* TaskItem.css */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-item-left {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds space between the checkbox and task name */
+}
+
+.task-item-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adds space between the timer and the buttons */
+}
+
+.timer {
+  font-size: 0.9rem;
+  color: #333;
+  margin-right: 3rem;
+}
+
+.timer span {
+  margin-right: 1rem;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 10px; /* Space between Edit and Delete buttons */
+}
+
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #79a3b1;
+  cursor: pointer;
+}

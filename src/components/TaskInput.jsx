@@ -5,14 +5,14 @@ import '../styles/TaskInput.css';
 
 const TaskInput = ({ addTask }) => {
   const [task, setTask] = useState('');
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (task && time > 0) {
       addTask({ name: task, time: Number(time), completed: false });
       setTask('');
-      setTime(0);
+      setTime('');
     }
   };
 

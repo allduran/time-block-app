@@ -1,6 +1,16 @@
+/* DailyOverview.css */
 .daily-overview {
-  background-color: var(--secondary-color);
-  border-radius: 10px;
-  padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.daily-overview p {
+  margin-bottom: 10px;
+}
+
+.daily-overview h2 {
+  margin-bottom: 15px;
+  color: #333;
 }

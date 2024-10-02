@@ -2,8 +2,15 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import Button from "./Button";
+import "../styles/TaskItem.css";
 
-function TaskItem({ task, index, updateTask, deleteTask, triggerNotification }) {
+function TaskItem({
+  task,
+  index,
+  updateTask,
+  deleteTask,
+  triggerNotification,
+}) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedTask, setEditedTask] = useState({
     name: task.name,
@@ -45,7 +52,10 @@ function TaskItem({ task, index, updateTask, deleteTask, triggerNotification }) 
     const updatedTask = { ...task, completed: !task.completed };
     updateTask(index, updatedTask);
     if (updatedTask.completed) {
-      setNotifiedTasks((prev) => new Set([...prev].filter((taskName) => taskName !== task.name)));
+      setNotifiedTasks(
+        (prev) =>
+          new Set([...prev].filter((taskName) => taskName !== task.name))
+      );
     }
   };
 
@@ -84,36 +94,46 @@ function TaskItem({ task, index, updateTask, deleteTask, triggerNotification }) 
           </Button>
         </>
       ) : (
-        <>
-          <input
-            type="checkbox"
-            checked={task.completed}
-            onChange={handleCompleteToggle}
-          />
-          {index + 1}. {task.name} - {task.time} minutes{" "}
-          {task.completed ? "(Completed)" : ""}
-          <Button onClick={handleEditToggle} type="primary">
-            Edit
-          </Button>
-          <Button onClick={() => deleteTask(index)} type="secondary">
-            Delete
-          </Button>
-          <div>
-            <span>
-              {Math.max(Math.floor(remainingTime / 60), 0)}:
-              {("0" + (remainingTime % 60)).slice(-2)}
-            </span>
-            {!isActive ? (
-              <Button onClick={handleStartTimer} type="primary">
-                Start Timer
-              </Button>
-            ) : (
-              <Button onClick={handleStopTimer} type="secondary">
-                Stop Timer
-              </Button>
-            )}
-          </div>
-        </>
+        <div className="task">
+  <div className="task-item-left">
+    <input
+      type="checkbox"
+      checked={task.completed}
+      onChange={handleCompleteToggle}
+      className="checkbox"
+    />
+    <span>
+      {index + 1}. {task.name} {task.completed ? "(Completed)" : ""}
+    </span>
+  </div>
+
+  <div className="task-item-right">
+    <div className="timer">
+      <span>
+        {Math.max(Math.floor(remainingTime / 60), 0)}:
+        {("0" + (remainingTime % 60)).slice(-2)} minutes
+      </span>
+      {!isActive ? (
+        <Button onClick={handleStartTimer} type="primary">
+          Start
+        </Button>
+      ) : (
+        <Button onClick={handleStopTimer} type="secondary">
+          Stop
+        </Button>
+      )}
+    </div>
+    <div className="task-buttons">
+      <Button onClick={handleEditToggle} type="primary">
+        Edit
+      </Button>
+      <Button onClick={() => deleteTask(index)} type="secondary">
+        Delete
+      </Button>
+    </div>
+  </div>
+</div>
+
       )}
     </li>
   );

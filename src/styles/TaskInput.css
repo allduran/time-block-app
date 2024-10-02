@@ -1,17 +1,44 @@
+/* TaskInput.css */
 .task-input {
   display: flex;
-  justify-content: center;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .task-input input {
-  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  padding: 0.5rem;
-  margin-right: 0.5rem;
-  flex: 1;
+  outline: none;
+}
+
+.task-input input:focus {
+  border-color: #79a3b1;
 }
 
 .task-input button {
-  margin-left: 0.5rem;
+  align-self: flex-start;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #79a3b1;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-input button:hover {
+  background-color: #558b96;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

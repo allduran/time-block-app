@@ -7,7 +7,7 @@ const Notification = ({ message, onClose }) => {
   return (
     <div className="notification">
       <span>{message}</span>
-      <Button onClick={onClose} type="primary">Close</Button>
+      <Button onClick={onClose} type="secondary">Close</Button>
     </div>
   );
 };
